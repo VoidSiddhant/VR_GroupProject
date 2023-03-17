@@ -1652,6 +1652,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "EitherHand",
+            "id": "f8ce0a25-c8ad-462a-9d7a-16fc70a27164",
+            "actions": [
+                {
+                    "name": "StartType",
+                    "type": "Value",
+                    "id": "4a422e86-f327-4ec3-86e7-a97772abbf94",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "2181faca-bc16-4c7c-ab4f-9fef02690a8f",
+                    "path": "<XRController>/primary2DAxisTouch",
+                    "interactions": "",
+                    "processors": "AxisDeadzone(min=0.15)",
+                    "groups": "",
+                    "action": "StartType",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [

@@ -6,7 +6,6 @@ using UnityEngine;
 public class Keyboard : MonoBehaviour
 {
     public TMP_InputField inputText;
-    public GameObject keys;
     public GameObject caps;
     private bool capital;
 
@@ -18,7 +17,8 @@ public class Keyboard : MonoBehaviour
 
     public void AddChar(string c)
     {
-        inputText.text += c;
+        if (capital) inputText.text += c.ToUpper();
+        else if (!capital) inputText.text += c.ToLower();
     }
 
     public void RemoveChar()
