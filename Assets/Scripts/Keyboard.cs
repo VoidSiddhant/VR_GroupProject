@@ -6,7 +6,6 @@ using UnityEngine;
 public class Keyboard : MonoBehaviour
 {
     public TMP_InputField inputText;
-    public GameObject caps;
     private bool capital;
 
     // Start is called before the first frame update

@@ -5,10 +5,11 @@ using UnityEngine;
 
 public class KeyPress : MonoBehaviour
 {
-    [SerializeField]Keyboard keyboard;
-    public char[] char_override;
+    [SerializeField]private Keyboard keyboard;
+    [SerializeField]private string keyName;
+    [TextArea][SerializeField]private string char_override;
     private int num_chars;
-    public TextMeshProUGUI text;
+    private TextMeshProUGUI text;
     private string chars;
 
     // Start is called before the first frame update
@@ -16,30 +17,41 @@ public class KeyPress : MonoBehaviour
     {
         num_chars = 0;
         text = GetComponentInChildren<TextMeshProUGUI>();
-        for(int i = 0; i < this.name.Length; i++)
+        if (keyName.Length >= 1)
         {
-            if (num_chars > 0 && num_chars % 2 == 0) text.text += '\n';
-
-            if (i < char_override.Length)
-            {
-                text.text += char_override[i];
-                chars += char_override[i];
-            }
-            else
-            {
-                text.text += this.name[i];
-                chars += this.name[i];
-            }
-            num_chars++;
-
+            text.text = keyName;
+            chars = char_override;
         }
+        else
+        {
+            for (int i = 0; i < this.name.Length; i++)
+            {
+                // check if a newline should be entered
+                if (num_chars > 0 && num_chars % 2 == 0) text.text += '\n';
+                // check if space should be entered
+                else if (num_chars > 0) text.text += " ";
 
-        Type(new Vector2(0.8f, 0.2f));
+                // check if name of key should not be used as typable characters
+                if (char_override.Length != 0)
+                {
+                    text.text += char_override[i];
+                    chars += char_override[i];
+                }
+                else
+                {
+                    text.text += this.name[i];
+                    chars += this.name[i];
+                }
+                num_chars++;
 
+            }
+        }
     }
 
     public void Type(Vector2 input)
     {
+        Debug.Log(input.x + " " + input.y);
+
         // If there is only one letter on the key, print that letter
         if (chars.Length == 1) 
             keyboard.AddChar(chars.Substring(0, 1));

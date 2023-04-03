@@ -1654,14 +1654,23 @@
             ]
         },
         {
-            "name": "EitherHand",
-            "id": "f8ce0a25-c8ad-462a-9d7a-16fc70a27164",
+            "name": "Typing",
+            "id": "bf3f2b58-8904-4fac-8786-c4df1d78d7ae",
             "actions": [
                 {
-                    "name": "StartType",
+                    "name": "RightHand",
                     "type": "Value",
-                    "id": "4a422e86-f327-4ec3-86e7-a97772abbf94",
-                    "expectedControlType": "Axis",
+                    "id": "1ad6f7af-33c7-4fa0-afba-93825ad42dd0",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "LeftHand",
+                    "type": "Value",
+                    "id": "95f0aac6-3b59-4d1c-805e-2be68970ed9f",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -1670,12 +1679,23 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "2181faca-bc16-4c7c-ab4f-9fef02690a8f",
-                    "path": "<XRController>/primary2DAxisTouch",
+                    "id": "adc5d319-dc30-4834-85f7-62208bf74a3e",
+                    "path": "<XRController>{RightHand}/primary2DAxis",
                     "interactions": "",
-                    "processors": "AxisDeadzone(min=0.15)",
+                    "processors": "",
+                    "groups": "Generic XR Controller",
+                    "action": "RightHand",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "cda7a000-7ca1-4789-bb08-bae86c0d941d",
+                    "path": "<XRController>{LeftHand}/primary2DAxis",
+                    "interactions": "",
+                    "processors": "",
                     "groups": "",
-                    "action": "StartType",
+                    "action": "LeftHand",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
