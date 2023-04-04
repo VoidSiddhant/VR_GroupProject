@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class KeyPress : MonoBehaviour
 {
-    [SerializeField]private Keyboard keyboard;
-    [SerializeField]private string keyName;
+    [SerializeField]protected Keyboard keyboard;
+    [TextArea][SerializeField]private string keyName;
     [TextArea][SerializeField]private string char_override;
     private int num_chars;
     private TextMeshProUGUI text;
@@ -48,9 +48,14 @@ public class KeyPress : MonoBehaviour
         }
     }
 
-    public void Type(Vector2 input)
+    public virtual void Type(Vector2 input)
     {
-        Debug.Log(input.x + " " + input.y);
+
+        if (keyboard == null)
+        {
+            Debug.Log("keyboard null");
+            return;
+        }
 
         // If there is only one letter on the key, print that letter
         if (chars.Length == 1) 
