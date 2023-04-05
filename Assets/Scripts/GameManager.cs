@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -30,10 +31,12 @@ public class GameManager : MonoBehaviour
             keyboard.transform.position = pos;
         }
     }
-    // Start is called before the first frame update
-    void Start()
+    
+    public void SetAnnotation(GameObject go)
     {
-        
+        int childCount = go.transform.childCount;
+
+        keyboard.SetAnnotation(go.GetComponent<TextMeshProUGUI>());
     }
 
     // Update is called once per frame

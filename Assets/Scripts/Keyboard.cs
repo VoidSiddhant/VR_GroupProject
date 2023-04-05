@@ -18,7 +18,7 @@ public class Keyboard : MonoBehaviour
 
 
     public TextMeshProUGUI inputText;
-    public Annotation note;
+    public TextMeshProUGUI note;
     private bool untouched;
     private bool capital;
 
@@ -61,14 +61,22 @@ public class Keyboard : MonoBehaviour
 
     public void LoadString()
     {
-        if (note == null) { return; }
-        inputText.text = note.Load();
+        if (note == null) 
+        {
+            Debug.Log("Load failed, note is null");
+            return; 
+        }
+        inputText.text = note.text;
     }
 
     public void SaveString() 
     { 
-        if (note == null) { return; }
-        note.Save(inputText.text);
+        if (note == null)
+        {
+            Debug.Log("Save failed, note is null");
+            return;
+        }
+        note.text = inputText.text;
     }
 
     public void Close()
@@ -76,5 +84,15 @@ public class Keyboard : MonoBehaviour
         // get rid of the reference
         note = null;
         inputText.text = "";
+    }
+
+    public void SetAnnotation(TextMeshProUGUI textmesh)
+    {
+        if (textmesh == null)
+        {
+            Debug.Log("set annotation failed, textmesh is null");
+            return;
+        }
+        note = textmesh;
     }
 }
