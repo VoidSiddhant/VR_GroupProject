@@ -11,6 +11,9 @@ public class GameManager : MonoBehaviour
     [SerializeField]private float keyboardDist;
 
     [SerializeField] private float maxDist;
+
+    [Header("UI Objects")]
+    public GameObject inventoryUI;
     private void Awake()
     {
         if(instance == null)
@@ -42,7 +45,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(keyboard.transform.gameObject.activeSelf)
+        if(keyboard != null && keyboard.transform.gameObject.activeSelf)
         {
             float dist = Vector2.Distance(new Vector2(Player.Instance.transform.position.x, Player.Instance.transform.position.z), new Vector2(keyboard.transform.position.x, keyboard.transform.position.z));
             if (dist > maxDist) 

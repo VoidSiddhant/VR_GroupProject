@@ -7,6 +7,8 @@ public class Player : MonoBehaviour
     private static Player instance = null;
     public static Player Instance{ get { return instance; } }
 
+    public bool isEnableInventory = true;
+
     private void Awake()
     {
         if(instance == null) instance = this;
@@ -21,6 +23,16 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(isEnableInventory)
+        {
+            if(Input.GetKeyDown(KeyCode.M))
+            {
+                GameManager.Instance.inventoryUI.SetActive(!GameManager.Instance.inventoryUI.activeSelf);
+                Vector3 point = transform.position + transform.forward * 4f;
+                point.y = 2.0f;
+                GameManager.Instance.inventoryUI.transform.position = point;
+                GameManager.Instance.inventoryUI.transform.LookAt(transform);
+            }
+        }
     }
 }
