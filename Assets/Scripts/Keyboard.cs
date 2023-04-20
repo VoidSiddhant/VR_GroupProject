@@ -8,13 +8,6 @@ using UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets;
 
 public class Keyboard : MonoBehaviour
 {
-    // for disabling/enabling joystick movement
-    [SerializeField] private GameObject XR_Origin;
-    private LocomotionSystem locomotion;
-    private ActionBasedContinuousTurnProvider continuousTurn;
-    private ActionBasedSnapTurnProvider snapTurn;
-    private DynamicMoveProvider dynamicMove;
-    private TeleportationProvider teleportation;
 
 
     public TextMeshProUGUI inputText;
@@ -26,12 +19,6 @@ public class Keyboard : MonoBehaviour
     void Start()
     {
         capital = false;
-
-        locomotion = XR_Origin.GetComponent<LocomotionSystem>();
-        continuousTurn = XR_Origin.GetComponent<ActionBasedContinuousTurnProvider>();  
-        snapTurn = XR_Origin.GetComponent<ActionBasedSnapTurnProvider>();
-        dynamicMove = XR_Origin.GetComponent<DynamicMoveProvider>();
-        teleportation = XR_Origin.GetComponent<TeleportationProvider>();
     }
 
     public void AddChar(string c)

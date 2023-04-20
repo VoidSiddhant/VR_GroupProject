@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets;
+using UnityEngine.XR.Interaction.Toolkit;
+using Unity.XR.CoreUtils;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,6 +17,14 @@ public class GameManager : MonoBehaviour
 
     [Header("UI Objects")]
     public GameObject inventoryUI;
+
+    // for disabling/enabling joystick movement
+    private GameObject XR_Origin;
+    private LocomotionSystem locomotion;
+    private ActionBasedContinuousTurnProvider continuousTurn;
+    private ActionBasedSnapTurnProvider snapTurn;
+    private DynamicMoveProvider dynamicMove;
+    private TeleportationProvider teleportation;
     private void Awake()
     {
         if(instance == null)
@@ -22,12 +33,25 @@ public class GameManager : MonoBehaviour
         {
             Destroy(instance);
         }
+
+
+
+        locomotion = GameObject.FindObjectOfType<XROrigin>().GetComponent<LocomotionSystem>();
+        continuousTurn = GameObject.FindObjectOfType<XROrigin>().GetComponent<ActionBasedContinuousTurnProvider>();
+        snapTurn = GameObject.FindObjectOfType<XROrigin>().GetComponent<ActionBasedSnapTurnProvider>();
+        dynamicMove = GameObject.FindObjectOfType<XROrigin>().GetComponent<DynamicMoveProvider>();
+        teleportation = GameObject.FindObjectOfType<XROrigin>().GetComponent<TeleportationProvider>();
     }
 
     public void ToggleKeyboard(bool toggle)
     {
         Debug.Log("Toggling keyboard");
         keyboard.transform.gameObject.SetActive(toggle);
+        locomotion.transform.gameObject.SetActive(toggle);
+        continuousTurn.transform.gameObject.SetActive(toggle);
+        snapTurn.transform.gameObject.SetActive(toggle);
+        dynamicMove.transform.gameObject.SetActive(toggle);
+        teleportation.transform.gameObject.SetActive(toggle);
         if(toggle)
         {
             Vector3 pos = Player.Instance.transform.position;
