@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
 
     public void ToggleKeyboard(bool toggle)
     {
+        Debug.Log("Toggling keyboard");
         keyboard.transform.gameObject.SetActive(toggle);
         if(toggle)
         {
