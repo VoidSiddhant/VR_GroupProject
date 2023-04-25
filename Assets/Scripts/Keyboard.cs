@@ -9,7 +9,7 @@ using UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets;
 public class Keyboard : MonoBehaviour
 {
     public TextMeshProUGUI inputText;
-    public TextMeshProUGUI note;
+    public ItemBehaviour note;
     private bool untouched;
     private bool capital;
 
@@ -29,7 +29,7 @@ public class Keyboard : MonoBehaviour
     {
         if(inputText.text.Length > 0)
         {
-            inputText.text = inputText.text.Substring(0, inputText.text.Length - 1);
+            inputText.text = inputText.text.Substring(0, inputText.text.Length - 2);
         }
 
         if(inputText.text.Length == 0) { 
@@ -44,38 +44,40 @@ public class Keyboard : MonoBehaviour
 
     public void LoadString()
     {
-        if (note == null) 
+        if (note.textObject == null) 
         {
             Debug.Log("Load failed, note is null");
             return; 
         }
-        inputText.text = note.text;
+        inputText.text = note.textObject.text;
     }
 
     public void SaveString() 
-    { 
-        if (note == null)
+    {
+
+        if (note.textObject == null)
         {
             Debug.Log("Save failed, note is null");
             return;
         }
-        note.text = inputText.text;
+
+        note.updateNote(inputText.text);
     }
 
     public void Close()
     {
         // get rid of the reference
-        note = null;
+        note.textObject = null;
         inputText.text = "";
     }
 
-    public void SetAnnotation(TextMeshProUGUI textmesh)
+    public void SetAnnotation(ItemBehaviour item)
     {
-        if (textmesh == null)
+        if (item == null)
         {
             Debug.Log("set annotation failed, textmesh is null");
             return;
         }
-        note = textmesh;
+        note = item;
     }
 }

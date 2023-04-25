@@ -24,7 +24,7 @@ public class ItemBehaviour : MonoBehaviour
     {
         canvas.gameObject.SetActive(true);
         GameManager.Instance.ToggleKeyboard(true);
-        GameManager.Instance.SetAnnotation(textObject);
+        GameManager.Instance.SetAnnotation(this);
     }
 
     public void TurnOffKeyboard()
@@ -70,4 +70,11 @@ public class ItemBehaviour : MonoBehaviour
         }
     }
 
+    public void updateNote(string name)
+    {
+        textObject.text = name;
+        string word = name.Split(' ')[0];
+
+        GameManager.Instance.updateAnnotationButton(this, word);
+    }
 }

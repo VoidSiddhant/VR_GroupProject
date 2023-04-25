@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets;
 using UnityEngine.XR.Interaction.Toolkit;
 using Unity.XR.CoreUtils;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -25,6 +26,11 @@ public class GameManager : MonoBehaviour
     private ActionBasedSnapTurnProvider snapTurn;
     private DynamicMoveProvider dynamicMove;
     private TeleportationProvider teleportation;
+
+    private Dictionary<ItemBehaviour, TextMeshProUGUI> furnitureToText= new Dictionary<ItemBehaviour, TextMeshProUGUI>();
+    public GameObject buttonPrefab;
+    public GameObject vert_panel;
+    //private Dictionary<Button, Dictionary<ItemBehaviour, TextMeshProUGUI>> buttonToDictionary = new Dictionary<Button, Dictionary<GameObject, TextMeshProUGUI>>();
     private void Awake()
     {
         if(instance == null)
@@ -73,10 +79,11 @@ public class GameManager : MonoBehaviour
         }
     }
     
-    public void SetAnnotation(TextMeshProUGUI go)
+    public void SetAnnotation(ItemBehaviour go)
     {
         keyboard.SetAnnotation(go);
     }
+
 
     // Update is called once per frame
     void Update()
@@ -91,5 +98,22 @@ public class GameManager : MonoBehaviour
                 ToggleKeyboard(false);
             }
          }
+    }
+
+    public void updateAnnotationButton(ItemBehaviour go, string text)
+    {
+        TextMeshProUGUI textmesh = null;
+        if(furnitureToText.TryGetValue(go, out textmesh))
+        {
+            textmesh.text = text;
+        } else
+        {
+            AnnotationJumpButton newButton = Instantiate(buttonPrefab, gameObject.transform.position, Quaternion.identity).GetComponent<AnnotationJumpButton>();
+            newButton.transform.SetParent(vert_panel.transform, false);
+            newButton.textMesh.text = text;
+            newButton.item = go.gameObject;
+            furnitureToText.Add(go, newButton.textMesh);
+
+        }
     }
 }
