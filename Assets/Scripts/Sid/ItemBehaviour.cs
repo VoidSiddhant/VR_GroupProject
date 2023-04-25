@@ -24,7 +24,7 @@ public class ItemBehaviour : MonoBehaviour
     {
         canvas.gameObject.SetActive(true);
         GameManager.Instance.ToggleKeyboard(true);
-        //GameManager.Instance.keyboard.
+        GameManager.Instance.SetAnnotation(textObject);
     }
 
     public void TurnOffKeyboard()

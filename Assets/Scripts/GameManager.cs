@@ -47,24 +47,35 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("Toggling keyboard");
         keyboard.transform.gameObject.SetActive(toggle);
-        locomotion.enabled = (toggle);
-        continuousTurn.enabled = (toggle);
-        snapTurn.enabled = (toggle);
-        dynamicMove.enabled = (toggle);
-        teleportation.enabled = (toggle);
+        locomotion.enabled = (!toggle);
+        continuousTurn.enabled = (!toggle);
+        snapTurn.enabled = (!toggle);
+        dynamicMove.enabled = (!toggle);
+        teleportation.enabled = (!toggle);
         if(toggle)
         {
             Vector3 pos = Player.Instance.transform.position;
-            pos = pos + Player.Instance.transform.forward * keyboardDist;
-            keyboard.transform.position = pos;
+            // direction to move keyboard out from player
+            Vector3 dir = Player.Instance.transform.forward;
+            dir.y = 0;
+            dir.Normalize();
+
+            // get height keyboard should be at
+            RaycastHit hit;
+            if (Physics.Raycast(Player.Instance.transform.position, -Player.Instance.transform.up, out hit, Mathf.Infinity))
+            {
+                pos.y = (hit.point.y + pos.y)/2.0f ;
+            }
+            // move keyboard
+            keyboard.transform.position = pos + dir * keyboardDist;
+            // point keyboad back toward player
+            keyboard.transform.LookAt(pos);
         }
     }
     
-    public void SetAnnotation(GameObject go)
+    public void SetAnnotation(TextMeshProUGUI go)
     {
-        int childCount = go.transform.childCount;
-
-        keyboard.SetAnnotation(go.GetComponent<TextMeshProUGUI>());
+        keyboard.SetAnnotation(go);
     }
 
     // Update is called once per frame
