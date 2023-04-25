@@ -40,7 +40,7 @@ public class MeasureToolManager : MonoBehaviour
             {
                 Debug.DrawRay(ray.origin, ray.direction * 10.0f, Color.green);
 
-                if (Input.GetMouseButtonDown(0))
+                if (Input.GetKeyDown(KeyCode.B))
                 {
                     if (measurePinA.activeSelf == false)
                     {
@@ -60,6 +60,11 @@ public class MeasureToolManager : MonoBehaviour
                         measurePinA.SetActive(false);
                         measurePinB.SetActive(false);
                     }
+                }
+
+                else if(Input.GetMouseButtonDown(0) && hitInfo.collider.tag == "Item")
+                {
+                    hitInfo.collider.gameObject.GetComponent<ItemBehaviour>().ToggleKeyboard();
                 }
             }
         }

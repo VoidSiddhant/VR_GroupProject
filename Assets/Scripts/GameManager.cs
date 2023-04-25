@@ -47,11 +47,11 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("Toggling keyboard");
         keyboard.transform.gameObject.SetActive(toggle);
-        locomotion.transform.gameObject.SetActive(toggle);
-        continuousTurn.transform.gameObject.SetActive(toggle);
-        snapTurn.transform.gameObject.SetActive(toggle);
-        dynamicMove.transform.gameObject.SetActive(toggle);
-        teleportation.transform.gameObject.SetActive(toggle);
+        locomotion.enabled = (toggle);
+        continuousTurn.enabled = (toggle);
+        snapTurn.enabled = (toggle);
+        dynamicMove.enabled = (toggle);
+        teleportation.enabled = (toggle);
         if(toggle)
         {
             Vector3 pos = Player.Instance.transform.position;

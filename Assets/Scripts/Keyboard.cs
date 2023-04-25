@@ -8,8 +8,6 @@ using UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets;
 
 public class Keyboard : MonoBehaviour
 {
-
-
     public TextMeshProUGUI inputText;
     public TextMeshProUGUI note;
     private bool untouched;
@@ -23,8 +21,6 @@ public class Keyboard : MonoBehaviour
 
     public void AddChar(string c)
     {
-        
-
         if (capital) inputText.text += c.ToUpper();
         else if (!capital) inputText.text += c.ToLower();
     }
