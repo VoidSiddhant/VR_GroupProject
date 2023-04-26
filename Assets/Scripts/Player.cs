@@ -29,10 +29,10 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(isEnableInventory)
+        if (isEnableInventory)
         {
-            
-            if(JoystickInput.action.WasPressedThisFrame())
+
+            if (JoystickInput.action.WasPressedThisFrame() || Input.GetKeyDown(KeyCode.B))
             {
                 GameManager.Instance.inventoryUI.SetActive(!GameManager.Instance.inventoryUI.activeSelf);
                 Vector3 point = transform.position + transform.forward * 4f;
