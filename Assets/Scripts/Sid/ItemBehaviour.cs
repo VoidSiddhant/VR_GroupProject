@@ -8,6 +8,7 @@ public class ItemBehaviour : MonoBehaviour
 {
     public TextMeshProUGUI textObject;
     public GameObject canvas;
+    public float minDst = 2.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +18,13 @@ public class ItemBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        float dst = Vector2.Distance(new Vector2(transform.position.x, transform.position.z), new Vector2(Player.Instance.transform.position.x, Player.Instance.transform.position.z));
+        if (dst <= minDst && textObject.text.Length > 0)
+        {
+            canvas.gameObject.SetActive(true);
+        }
+        else if (dst > minDst && GameManager.Instance.keyboard.gameObject.activeSelf == false)
+            canvas.gameObject.SetActive(false);
     }
 
     public void TurnOnKeyboard()

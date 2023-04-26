@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,6 +12,7 @@ public class InventoryObject : MonoBehaviour
     void Start()
     {
         GetComponent<Image>().sprite = thumbnail;
+        GetComponentInChildren<TextMeshProUGUI>().text = inventoryObjectPrefab.name;
     }
 
     // Update is called once per frame
