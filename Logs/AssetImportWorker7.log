@@ -1566,3 +1566,194 @@ AssetImportParameters requested are different than current active one (requested
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.008493 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\#UnityProject\VRAssignment#1\GroupProject\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Symbol file LoadedFromMemory doesn't match image C:\#UnityProject\VRAssignment#1\GroupProject\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.26 ms, found 11 plugins.
+Preloading 1 native plugins for Editor in 0.23 ms.
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.NullReferenceException: Object reference not set to an instance of an object
+  at Unity.XR.Oculus.OculusLoader.AssetPathToAbsolutePath (System.String assetPath) [0x0003d] in C:\#UnityProject\VRAssignment#1\GroupProject\Library\PackageCache\com.unity.xr.oculus@3.2.2\Runtime\OculusLoader.cs:296 
+  at Unity.XR.Oculus.OculusLoader.EditorLoadOVRPlugin () [0x0007b] in C:\#UnityProject\VRAssignment#1\GroupProject\Library\PackageCache\com.unity.xr.oculus@3.2.2\Runtime\OculusLoader.cs:281 
+  at (wrapper managed-to-native) System.Reflection.RuntimeMethodInfo.InternalInvoke(System.Reflection.RuntimeMethodInfo,object,object[],System.Exception&)
+  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x0006a] in <c2a97e0383e8404c9fc0ae19d58f57f1>:0 
+   --- End of inner exception stack trace ---
+  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00083] in <c2a97e0383e8404c9fc0ae19d58f57f1>:0 
+  at System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) [0x00000] in <c2a97e0383e8404c9fc0ae19d58f57f1>:0 
+  at UnityEditor.EditorAssemblies.ProcessInitializeOnLoadMethodAttributes () [0x000a5] in <5f40cdb07bd44d76a23dad985a4ec283>:0 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadMethodAttributes ()
+
+Mono: successfully reloaded assembly
+- Completed reload, in  1.764 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1766ms)
+		BeginReloadAssembly (508ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (30ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (222ms)
+		EndReloadAssembly (1174ms)
+			LoadAssemblies (148ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (322ms)
+			ReleaseScriptCaches (4ms)
+			RebuildScriptCaches (42ms)
+			SetupLoadedEditorAssemblies (591ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (22ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (2ms)
+				BeforeProcessingInitializeOnLoad (78ms)
+				ProcessInitializeOnLoadAttributes (391ms)
+				ProcessInitializeOnLoadMethodAttributes (93ms)
+				AfterProcessingInitializeOnLoad (4ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (14ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 11.36 ms, found 11 plugins.
+Preloading 1 native plugins for Editor in 0.07 ms.
+Unloading 6441 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 50 unused Assets / (0.8 MB). Loaded Objects now: 7158.
+Memory consumption went from 275.9 MB to 275.2 MB.
+Total: 7.314200 ms (FindLiveObjects: 0.369300 ms CreateObjectMapping: 0.218400 ms MarkObjects: 6.052300 ms  DeleteObjects: 0.672700 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 580361.003624 seconds.
+  path: Assets/Surfaces Beta 0.4/Data/Walls/Ceramic Brick Wall/Ceramic Brick Wall 01/Ceramic_Brick_Wall_Height.png
+  artifactKey: Guid(4f55888d6c45dc44090fb394cb20434b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Surfaces Beta 0.4/Data/Walls/Ceramic Brick Wall/Ceramic Brick Wall 01/Ceramic_Brick_Wall_Height.png using Guid(4f55888d6c45dc44090fb394cb20434b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '834465fe88d9d32b3623270bf9c5b9a8') in 0.135680 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Surfaces Beta 0.4/Data/Walls/Ceramic Brick Wall/Ceramic Brick Wall 01/Ceramic_Brick_Wall_Normal.png
+  artifactKey: Guid(5b92218a20e3afb48acea49f658661a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Surfaces Beta 0.4/Data/Walls/Ceramic Brick Wall/Ceramic Brick Wall 01/Ceramic_Brick_Wall_Normal.png using Guid(5b92218a20e3afb48acea49f658661a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '944495e6514d2b633251c9d4e5542a90') in 0.057502 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.117164 seconds.
+  path: Assets/Surfaces Beta 0.4/Data/Walls/Ceramic Brick Wall/Ceramic Brick Wall 02/Ceramic_Brick_Wall_Height.png
+  artifactKey: Guid(f36e3352d8f075a42b2df2545f7ad1ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Surfaces Beta 0.4/Data/Walls/Ceramic Brick Wall/Ceramic Brick Wall 02/Ceramic_Brick_Wall_Height.png using Guid(f36e3352d8f075a42b2df2545f7ad1ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ea7e17e002427ac4dcf3d6958a221495') in 0.020362 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Surfaces Beta 0.4/Data/Walls/Ceramic Brick Wall/Ceramic Brick Wall 02/Ceramic_Brick_Wall_Metalness.tga
+  artifactKey: Guid(d0543d49cca40ac499127cde24f2abad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Surfaces Beta 0.4/Data/Walls/Ceramic Brick Wall/Ceramic Brick Wall 02/Ceramic_Brick_Wall_Metalness.tga using Guid(d0543d49cca40ac499127cde24f2abad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bf145b084d383ab43eb0de45715184d7') in 0.022237 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.870246 seconds.
+  path: Assets/Surfaces Beta 0.4/Data/Walls/Ceramic Brick Wall/Ceramic Brick Wall 03/Ceramic_Brick_Wall_Height.png
+  artifactKey: Guid(112804c599f6ca2419e2bb96737eb2ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Surfaces Beta 0.4/Data/Walls/Ceramic Brick Wall/Ceramic Brick Wall 03/Ceramic_Brick_Wall_Height.png using Guid(112804c599f6ca2419e2bb96737eb2ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '12a3ecc4394898d2699bdaac152c21d0') in 0.015177 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Surfaces Beta 0.4/Data/Walls/Ceramic Brick Wall/Ceramic Brick Wall 03/Ceramic_Brick_Wall_Metalness.tga
+  artifactKey: Guid(82e63ce99c4e4554da455b5d0d00db1a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Surfaces Beta 0.4/Data/Walls/Ceramic Brick Wall/Ceramic Brick Wall 03/Ceramic_Brick_Wall_Metalness.tga using Guid(82e63ce99c4e4554da455b5d0d00db1a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1c4914f58ad2c47614763b293c3805b0') in 0.020111 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.518341 seconds.
+  path: Assets/Surfaces Beta 0.4/Data/Walls/Ceramic Brick Wall/Ceramic Brick Wall 04/Ceramic_Brick_Wall_Height.png
+  artifactKey: Guid(5b9b1d8a532b80343898a93452008b59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Surfaces Beta 0.4/Data/Walls/Ceramic Brick Wall/Ceramic Brick Wall 04/Ceramic_Brick_Wall_Height.png using Guid(5b9b1d8a532b80343898a93452008b59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f01cef95ca99783a2ad4dd412fbe8c2e') in 0.012781 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Surfaces Beta 0.4/Data/Walls/Ceramic Brick Wall/Ceramic Brick Wall 04/Ceramic_Brick_Wall_Normal.png
+  artifactKey: Guid(183b5bdf6bdad4d48a5a123f96f9fdfa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Surfaces Beta 0.4/Data/Walls/Ceramic Brick Wall/Ceramic Brick Wall 04/Ceramic_Brick_Wall_Normal.png using Guid(183b5bdf6bdad4d48a5a123f96f9fdfa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2996610dd21483ba8c697f5a42396ad6') in 0.016775 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.305587 seconds.
+  path: Assets/Surfaces Beta 0.4/Data/Walls/Ceramic Brick Wall/Ceramic Brick Wall 05/Ceramic_Brick_Wall_Albedo_02.png
+  artifactKey: Guid(fee6c25c7b3d454488635c22de46397f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Surfaces Beta 0.4/Data/Walls/Ceramic Brick Wall/Ceramic Brick Wall 05/Ceramic_Brick_Wall_Albedo_02.png using Guid(fee6c25c7b3d454488635c22de46397f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '760b96875d4db4b8e8168ce00d22cbc3') in 0.015833 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Surfaces Beta 0.4/Data/Walls/Ceramic Brick Wall/Ceramic Brick Wall 05/Ceramic_Brick_Wall_Height.png
+  artifactKey: Guid(8a34bb40afac404469f98e481ae283e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Surfaces Beta 0.4/Data/Walls/Ceramic Brick Wall/Ceramic Brick Wall 05/Ceramic_Brick_Wall_Height.png using Guid(8a34bb40afac404469f98e481ae283e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '91ee968bf4b9f789f128defdfbbc78b3') in 0.017893 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.218332 seconds.
+  path: Assets/Surfaces Beta 0.4/Data/Walls/Ceramic Brick Wall/Ceramic Brick Wall 06/Ceramic_Brick_Wall_Height.png
+  artifactKey: Guid(78948618b67080d4d9937da587665bfc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Surfaces Beta 0.4/Data/Walls/Ceramic Brick Wall/Ceramic Brick Wall 06/Ceramic_Brick_Wall_Height.png using Guid(78948618b67080d4d9937da587665bfc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '49636930bf203c0902a766262407b726') in 0.012739 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Surfaces Beta 0.4/Data/Walls/Ceramic Brick Wall/Ceramic Brick Wall 06/Ceramic_Brick_Wall_Metalness.tga
+  artifactKey: Guid(ee18d34ced1634a49bf458ab3c3b15f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Surfaces Beta 0.4/Data/Walls/Ceramic Brick Wall/Ceramic Brick Wall 06/Ceramic_Brick_Wall_Metalness.tga using Guid(ee18d34ced1634a49bf458ab3c3b15f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c501b5b4fb0354fff3676f8ef199a36a') in 0.011000 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.436320 seconds.
+  path: Assets/Surfaces Beta 0.4/Data/Walls/Ceramic Brick Wall/Ceramic Brick Wall 07/Ceramic_Brick_Wall_Height.png
+  artifactKey: Guid(bd89b06be413d6f4ab166b55d06ed054) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Surfaces Beta 0.4/Data/Walls/Ceramic Brick Wall/Ceramic Brick Wall 07/Ceramic_Brick_Wall_Height.png using Guid(bd89b06be413d6f4ab166b55d06ed054) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bff5b7a94d7ffd3c7288553e083d6dcc') in 0.014873 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Surfaces Beta 0.4/Data/Walls/Ceramic Brick Wall/Ceramic Brick Wall 07/Ceramic_Brick_Wall_Normal.png
+  artifactKey: Guid(6f3124b1649e02f4bb0f1e4e3d104d83) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Surfaces Beta 0.4/Data/Walls/Ceramic Brick Wall/Ceramic Brick Wall 07/Ceramic_Brick_Wall_Normal.png using Guid(6f3124b1649e02f4bb0f1e4e3d104d83) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9ecfc2155ef70636c6aba2fc32b2fb49') in 0.014811 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.761244 seconds.
+  path: Assets/Surfaces Beta 0.4/Data/Walls/Ceramic Brick Wall/Ceramic Brick Wall 08/Ceramic_Brick_Wall_Height.png
+  artifactKey: Guid(a8483f05292bf0645a6f00589c19a2c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Surfaces Beta 0.4/Data/Walls/Ceramic Brick Wall/Ceramic Brick Wall 08/Ceramic_Brick_Wall_Height.png using Guid(a8483f05292bf0645a6f00589c19a2c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cec4e9d7c8a822c6a36c8abdd479c7f5') in 0.012211 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Surfaces Beta 0.4/Data/Walls/Ceramic Brick Wall/Ceramic Brick Wall 08/Ceramic_Brick_Wall_Normal.png
+  artifactKey: Guid(962b7c7cd50532540a339f235f0e47f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Surfaces Beta 0.4/Data/Walls/Ceramic Brick Wall/Ceramic Brick Wall 08/Ceramic_Brick_Wall_Normal.png using Guid(962b7c7cd50532540a339f235f0e47f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f2aa51136bf62690a971216ac642bfc3') in 0.015645 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.125058 seconds.
+  path: Assets/Surfaces Beta 0.4/Data/Walls/Cement Brick Wall/Cement Bricks Wall/Cement_Block_Wall_Height.png
+  artifactKey: Guid(227c34cc56dd42f4a917a7a3d25223fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Surfaces Beta 0.4/Data/Walls/Cement Brick Wall/Cement Bricks Wall/Cement_Block_Wall_Height.png using Guid(227c34cc56dd42f4a917a7a3d25223fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7f2e66d371a907aaa4d84f9de0b7944c') in 0.023089 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Surfaces Beta 0.4/Data/Walls/Cement Brick Wall/Cement Bricks Wall/Cement_Block_Wall_Metallic.tga
+  artifactKey: Guid(d0ce3ef611680404998002ac84ec28c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Surfaces Beta 0.4/Data/Walls/Cement Brick Wall/Cement Bricks Wall/Cement_Block_Wall_Metallic.tga using Guid(d0ce3ef611680404998002ac84ec28c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '01e6f6a551a9f766a5854fd326fa5efb') in 0.023475 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.324566 seconds.
+  path: Assets/Surfaces Beta 0.4/Data/Walls/Cement Brick Wall/Painted Cement Bricks Wall/Painted_Cement_Block_Wall_Metallic.tga
+  artifactKey: Guid(2f8d44435a9468847924cf7a74dab49b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Surfaces Beta 0.4/Data/Walls/Cement Brick Wall/Painted Cement Bricks Wall/Painted_Cement_Block_Wall_Metallic.tga using Guid(2f8d44435a9468847924cf7a74dab49b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '62f53ca511e868a785bea648500ebbfa') in 0.019118 seconds 
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
