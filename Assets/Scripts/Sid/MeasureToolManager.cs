@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
+using UnityEngine.XR.Interaction.Toolkit;
 
 [RequireComponent(typeof(LineRenderer))]
 public class MeasureToolManager : MonoBehaviour
 {
     public Transform raycastPoint;
+    [SerializeField] private InputActionProperty JoystickInput1;
+    [SerializeField] private InputActionProperty JoystickInput2;
 
     public bool enableMeasureTool = false;
     public LayerMask measureToolLayer;
@@ -40,7 +44,7 @@ public class MeasureToolManager : MonoBehaviour
             {
                 Debug.DrawRay(ray.origin, ray.direction * 10.0f, Color.green);
 
-                if (Input.GetKeyDown(KeyCode.B))
+                if (JoystickInput1.action.WasPressedThisFrame())
                 {
                     if (measurePinA.activeSelf == false)
                     {
@@ -62,7 +66,7 @@ public class MeasureToolManager : MonoBehaviour
                     }
                 }
 
-                else if(Input.GetMouseButtonDown(0) && hitInfo.collider.tag == "Item")
+                else if(JoystickInput2.action.WasPressedThisFrame() && hitInfo.collider.tag == "Item")
                 {
                     hitInfo.collider.gameObject.GetComponent<ItemBehaviour>().ToggleKeyboard();
                 }

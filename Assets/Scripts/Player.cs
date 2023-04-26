@@ -2,6 +2,8 @@ using Mono.Cecil.Cil;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class Player : MonoBehaviour
 {
@@ -9,6 +11,8 @@ public class Player : MonoBehaviour
     public static Player Instance{ get { return instance; } }
 
     public bool isEnableInventory = true;
+
+    [SerializeField] private InputActionProperty JoystickInput;
 
 
     private void Awake()
@@ -27,7 +31,8 @@ public class Player : MonoBehaviour
     {
         if(isEnableInventory)
         {
-            if(Input.GetKeyDown(KeyCode.M))
+            
+            if(JoystickInput.action.WasPressedThisFrame())
             {
                 GameManager.Instance.inventoryUI.SetActive(!GameManager.Instance.inventoryUI.activeSelf);
                 Vector3 point = transform.position + transform.forward * 4f;
