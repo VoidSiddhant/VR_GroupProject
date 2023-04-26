@@ -27,13 +27,13 @@ public class Keyboard : MonoBehaviour
 
     public void RemoveChar()
     {
-        if(inputText.text.Length > 0)
+        if(inputText.text.Length == 1)
         {
-            inputText.text = inputText.text.Substring(0, inputText.text.Length - 2);
-        }
-
-        if(inputText.text.Length == 0) { 
             inputText.text = "";
+        }
+        else if(inputText.text.Length > 1)
+        {
+            inputText.text = inputText.text.Substring(0, inputText.text.Length - 1);
         }
     }
 
